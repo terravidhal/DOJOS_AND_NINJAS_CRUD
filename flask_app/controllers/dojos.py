@@ -34,7 +34,7 @@ def dojo_show_func(dojo_id):
         "dojo_id" : dojo_id
     }
 
-    ninjas = Ninja.get_specific_ninja(data)
+    ninjas = Ninja.get_ninjas_specific_dojo(data)
    # print('ninjas++++', ninjas)
    
     one_dojo = Dojo.get_specific_dojo(data)

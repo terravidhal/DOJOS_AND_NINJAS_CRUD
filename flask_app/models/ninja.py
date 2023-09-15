@@ -37,21 +37,17 @@ class Ninja:
 
 
     @classmethod
-    def get_specific_ninja(cls, data):
+    def get_ninjas_specific_dojo(cls, data):
         query = "SELECT * FROM ninjas WHERE dojo_id = %(dojo_id)s"
 
         results = connectToMySQL('dojos_and_ninjas_new').query_db(query, data)
 
-        # print('new results:++', results)
-        #return cls(results[0])
-       
-        #return results[0]
-        
         ninja_Arr = []
 
         for elt in results:
-            ninja_Arr.append(elt)
+            ninja_Arr.append(cls(elt))
 
+        #print('new results:++', ninja_Arr)
         return ninja_Arr
     
 

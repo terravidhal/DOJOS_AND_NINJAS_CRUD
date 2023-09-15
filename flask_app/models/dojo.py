@@ -32,14 +32,12 @@ class Dojo:
 
     @classmethod
     def get_specific_dojo(cls, data):
-        query = "SELECT name FROM dojos WHERE id = %(dojo_id)s"
+        query = "SELECT * FROM dojos WHERE id = %(dojo_id)s"
 
         results = connectToMySQL('dojos_and_ninjas_new').query_db(query, data)
 
-        # print('new results:++', results)
-        #return cls(results[0])
-
-        return results[0]
+        #print('new results:++', cls(results[0]))
+        return cls(results[0])
 
         
  
